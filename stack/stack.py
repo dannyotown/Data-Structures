@@ -18,10 +18,7 @@ class Stack:
         self.storage = []
 
     def __len__(self):
-        count = 0
-        for i in self.storage:
-            count += 1
-        return count
+        return len(self.storage)
 
     def push(self, value):
         self.storage.insert(0, value)
