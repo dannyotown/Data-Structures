@@ -73,9 +73,7 @@ class DoublyLinkedList:
         else:
             old_head = self.head
             self.length -= 1
-            new_head = old_head.next
-            self.head = new_head
-            self.head.prev = None
+            self.head.delete()
             return old_head.value
 
     """Wraps the given value in a ListNode and inserts it 
@@ -109,8 +107,7 @@ class DoublyLinkedList:
         else:
             self.length -=1
             old_node = self.tail
-            self.tail = old_node.prev
-            self.tail.next = None
+            self.tail.delete()
             return old_node.value
 
     """Removes the input node from its current spot in the 
