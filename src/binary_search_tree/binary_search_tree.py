@@ -79,29 +79,29 @@ class BSTNode:
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
-        # list_hold = []
-        # list_hold.insert(0,node)
-        # while len(list_hold) > 0:
-        #     print(list_hold[-1])
-        #     cur = list_hold.pop(-1)
-        #     if cur.left:
-        #         list_hold.insert(0,cur.left)
-        #     if cur.right:
-        #         list_hold.insert(0,cur.right)
-        pass
+        list_hold = []
+        list_hold.insert(0,node)
+        while len(list_hold)> 0:
+            print(list_hold[-1].value)
+            current_node = list_hold.pop(-1)
+            if current_node.left:
+                list_hold.insert(0,current_node.left)
+            if current_node.right:
+                list_hold.insert(0,current_node.right)
+
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
         list_hold = []
-        list_hold.append(node.value)
+        list_hold.insert(0,node)
         while len(list_hold) > 0:
-            print(list_hold[0])
-            cur = list_hold.pop(0)
-            if cur.left:
-                list_hold.append(cur.left.value)
-            if cur.right:
-                list_hold.append(cur.right.value)
+            print(list_hold[0].value)
+            current_node = list_hold.pop(0)
+            if current_node.left:
+                list_hold.insert(0,cur.left)
+            if current_node.right:
+                list_hold.insert(0,cur.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
@@ -121,11 +121,13 @@ class BSTNode:
             node.post_order_dft(node.right)
             print(node.value)
       
-bst = BSTNode(5)
-bst.insert(3)
-bst.insert(1)
-bst.insert(4)
-bst.insert(6)
+bst = BSTNode(1)
+bst.insert(8)
+bst.insert(5)
 bst.insert(7)
-bst.pre_order_dft(bst)
-bst.post_order_dft(bst)
+bst.insert(6)
+bst.insert(3)
+bst.insert(4)
+bst.insert(2)
+
+bst.dft_print(bst)
