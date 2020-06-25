@@ -99,9 +99,9 @@ class BSTNode:
             print(list_hold[0].value)
             current_node = list_hold.pop(0)
             if current_node.left:
-                list_hold.insert(0,cur.left)
+                list_hold.insert(0,current_node.left)
             if current_node.right:
-                list_hold.insert(0,cur.right)
+                list_hold.insert(0,current_node.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
@@ -121,13 +121,13 @@ class BSTNode:
             node.post_order_dft(node.right)
             print(node.value)
       
-bst = BSTNode(1)
-bst.insert(8)
-bst.insert(5)
-bst.insert(7)
-bst.insert(6)
-bst.insert(3)
-bst.insert(4)
-bst.insert(2)
+# bst = BSTNode(1)
+# bst.insert(8)
+# bst.insert(5)
+# bst.insert(7)
+# bst.insert(6)
+# bst.insert(3)
+# bst.insert(4)
+# bst.insert(2)
 
-bst.dft_print(bst)
+# bst.dft_print(bst)
